@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Navv from "./Components/Navv";
+import {Data} from"./Components/Data";
+import Listcard from './Components/Listcard';
+import { useState } from 'react';
+import React from "react";
 function App() {
+  const[Movies,Setmovie]= useState ({Data})
+  const[Search,Setsearch]= useState("")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Navv Setsearch={Setsearch} Search="Search"/>
+      <Listcard Movies={Movies}  Search={Search}/>
     </div>
   );
 }
